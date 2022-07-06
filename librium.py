@@ -549,7 +549,7 @@ class Window(QMainWindow):
 
     def create_port(self):
         '''создание полноценного портфолио на рабочем столе'''
-        name, ok_pressed = QInputDialog.getText(self, "Путь к папке LIBRIUM",
+        name, ok_pressed = QInputDialog.getText(self, "Путь к папке",
                                                 'Введите имя папки')
         if ok_pressed:
             if name:
@@ -715,6 +715,7 @@ class Window(QMainWindow):
 
         self.login_string = QLineEdit()
         self.password_string = QLineEdit()
+        self.password_string.setEchoMode(QLineEdit.Password)
 
         layout.addWidget(QLabel('Введите логин:'), 1, 0)
         layout.addWidget(self.login_string, 1, 1, alignment=Qt.AlignCenter)
